@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fabian Gutierrez's portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/css.css">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88351060-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head>
+<body class="blue-grey lighten-5">
+  <main>
+    <!-- DROPDOWN -->
+    <ul id="dropdown1" class="dropdown-content" >
+      <li v-for="category in categories"><a :href="'#'+category.category+'-container'">{{category.name}}</a></li>
+    </ul>
+    <nav class="deep-purple darken-2">
+      <nav-c :categories="categories" burger="true"></nav-c>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="grey darken-4 white-text cover" id="about-container">
+      <div class="container">
+        <!-- BIG -->
+        <div class="row valign-wrapper hide-on-small-only">
+          <div class="col s12 m6 center-align">
+            <img src="https://gravatar.com/avatar/d4b56a8d2c85a341d4bf32eacaa3edd0?s=230" alt="" class="circle responsive-img">
+          </div>
+          <div class="col s12 m6 center-align">
+            <h1>I'm Fabian Gutierrez</h1>
+            <h2 class="flow-text"><span class="amber-text text-lighten-3">Full-stack developer</span> and <span class="teal-text text-lighten-3">environmental engineer</span> that loves efficiency in development and problem solving</h2>
+          </div>
+        </div>
+        <!-- /BIG -->
+        <!-- SMALL -->
+        <div class="row  hide-on-med-and-up">
+          <div class="col s12 m6 center-align">
+            <img src="https://gravatar.com/avatar/d4b56a8d2c85a341d4bf32eacaa3edd0?s=230" alt="" class="circle responsive-img">
+          </div>
+          <div class="col s12 m6 center-align">
+            <h1>Mi name is Fabian Gutierrez</h1>
+            <h2 class="flow-text">I'm full-stack developer that loves efficency and problem solving</h2>
+          </div>
+        </div>
+        <!-- /SMALL -->
+        <section class="grey darken-4 white-text no-pad-bot">
+          <social-c :social="social"></social-c>
+        </section>
+      </div>
+    </section>
+    <!-- WORK CATEGORIES -->
+    <div class="container">
+      <h2 class="center">My projects</h2>
+      <sections-c :categories="categories" :projects="projects"></sections-c>
+    </div>
+    <!-- SKILLS -->
+    <section class="grey darken-4 white-text cover2" id="skills-container">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 center-align">
+            <h2 class="about">Skills</h2>
+            <p class="flow-text">I've been described as a very creative person when a problem comes, I always try to get the easiest way to solve problems and improve the productivity and efficiency in my environment.</p>
+            <p class="flow-text">As developer, my favorite stack is Mongo, Express, Vue ( ❤ Javascript), but I enjoy learn every day new things, new languages, new ideas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--GAME FOOTER -->
+    <section class="deep-purple darken-2 white-text" id="footer-container">
+    </section>
+    <!--/GAME FOOTER -->
+    <!-- FOOTER NAV -->
+    <nav class="deep-purple darken-2">
+      <nav-c :categories="categories" blog="true"></nav-c>
+    </nav>
+  </main>
+    <!-- /FOOTER NAV -->
+  <!-- TEMPLATES -->
+  <!-- LABELS TEMPLATE -->
+  <template id="social-t">
+    <div id="social-network-container">
+      <div class="container">
+        <div class="row no-mar-bot">
+          <div class="col s12 center">
+            <a  :href="network.link" v-for="network in social">
+              <img :src="network.icon" alt="" class="img-social" >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <!-- LABELS TEMPLATE -->
+  <template id="labels-t">
+  </template>
+  <!-- NAVBAR TEMPLATE -->
+  <template id="nav-t">
+    <!-- NAVIGATION BAR -->
+		  <div class="nav-wrapper">
+        <!-- LOGO -->
+		    <a href="#" class="brand-logo" v-if="!blog">Fabian Gutierrez</a>
+        <!-- NAV BURGER BUTTON -->
+        <a v-if="burger" href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+        <!-- NORMAL NAVBAR -->
+        <ul class="right" v-bind:class="{'hide-on-med-and-down':burger}">
+          <li><a href="#about-container">About</a></li>
+          <li v-if="!blog"><a class="dropdown-button" href="#!" data-activates="dropdown1">My Work<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="#skills-container">Skills</a></li>
+          <li v-if="blog"><a href="blog.fabiangutierrez.co">Blog</a></li>
+        </ul>
+        <!-- MOBILE NAVBAR -->
+        <ul class="side-nav" id="mobile-nav">
+          <li><a href="#about-container">About</a></li>
+          <!-- <li><a class="dropdown-button" href="#!" data-activates="dropdown1">My Work<i class="material-icons right">arrow_drop_down</i></a></li> -->
+          <li><a href="#skills-container">Skills</a></li>
+          <li ><a href="blog.fabiangutierrez.co">Blog</a></li>
+        </ul>
+		  </div>
+  </template>
+  <!-- SECTIONS TEMPLATE -->
+  <template id="sections-t">
+    <div>
+      <div v-for="category in categories" :id="category.category+'-container'">
+        <h3>{{category.name}}</h3>
+        <p class="flow-text" v-html="category.description"></p>
+          <div class="row">
+            <div class="col s12 m6 l4" v-for="project in categoryFilter(projects,category.category)">
+              <div class="card sticky-action" >
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img v-if="project.img !==''" :src="project.img" alt="" class="activator">
+                    <img v-else="project.img !==''" src="https://lh3.googleusercontent.com/ydBI7Bx7qfi8jjFGcwWSVtsn62-NtJQNE_F6vSDAap--Qv95Ft67FeORMc_8tlggWgy7=w300" alt="" class="activator">
+                  </div>
+                  <div class="card-content">
+                      <span class=" activator grey-text text-darken-4">{{project.name}}
+                      </span>
+                  </div>
+                  <div class="card-action center"> <a :href="project.link" class="btn primary btn-flat teal-text" >See <i class="material-icons right">remove_red_eye</i>
+					 </a></div>
+                  <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">{{project.name}}<i class="material-icons right">close</i></span>
+                      <p v-html="project.description"></p>
+                      <div class="chip" v-for="technology in project.technologies">
+                        {{technology}}
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </template>
+  <!-- SCRIPTS -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.0.1/phaser.js"></script> -->
+  <!-- <script src="js/game.js"></script> -->
+</body>
+</html>

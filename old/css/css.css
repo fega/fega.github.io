@@ -1,0 +1,57 @@
+h1{
+	font-size: 30px;
+}
+h2{
+	font-size: 1.64rem;
+}
+h3{
+	font-size: 1.5rem;
+}
+nav{
+	padding-left: 16px;
+	padding-right:16px;
+}
+.collection .collection-item.avatar .rect {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.card .card-action {
+    padding: 4px;
+}
+.img-social{
+	margin-left: 5px;
+	margin-right:5px;
+
+}
+.card .card-content {
+    padding: 16px;
+}
+.no-mar-bot{
+	margin-bottom:0
+}
+
+.cover{
+	/*background-image: url(http://pop.h-cdn.co/assets/15/14/1600x800/landscape-1427898126-pet-rock.jpg);*/
+	background-repeat: no-repeat;
+	background-position: bottom;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 40px;
+}
+.cover2{
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+.dropdown-content li>a, .dropdown-content li>span {
+    color: #212121 ;
+}
