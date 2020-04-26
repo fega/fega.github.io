@@ -1,6 +1,8 @@
 <template>
   <div :style="heroColor" class="hero">
     <IsometricGrid />
+    <Corner class="corner1"/>
+    <Corner class="corner2"/>
     <transition name="fade">
       <Phone v-if="!hoverName || hoverName==='linkedIn'" />
     </transition>
@@ -19,18 +21,21 @@
         <flat-button
           class="button"
           color="#2196f3"
+          blend="saturation"
           @mouseover="setColor($event,'github')"
           @click="goTo('https://github.com/fega')"
         >GitHub</flat-button>
         <flat-button
           color= "rgba(0,0,0,0)"
           class="button"
+          blend="saturation"
           @mouseover="setColor($event,'linkedIn')"
           @click="goTo('https://www.linkedin.com/in/fabiangutierreza/')"
         >LinkedIn</flat-button>
         <flat-button
           color="#c62828"
           class="button"
+          blend="multiply"
           @mouseover="setColor($event, 'youtube')"
           @click="goTo('https://www.youtube.com/channel/UCSJWn-oCkNXxxUomuL1zz3g')"
         >Youtube</flat-button>
@@ -45,8 +50,10 @@ import Phone from "@/components/Isometric/PhoneAnimated";
 import Youtube from "@/components/Isometric/Youtube";
 import Github from "@/components/Isometric/Github";
 import IsometricGrid from "@/components/Isometric/Grid";
+import Corner from '@/components/Isometric/Corner';
+
 export default {
-  components: { FlatButton, Phone, IsometricGrid, Youtube, Github },
+  components: { FlatButton, Phone, IsometricGrid, Youtube, Github, Corner },
   data() {
     return {
       hoverName: null,
@@ -59,6 +66,7 @@ export default {
     setColor(ev, hover) {
       this.hoverName = hover;
       this.heroColor.backgroundColor = ev.target.attributes.color.value;
+      this.heroColor.backgroundBlendMode = ev.target.attributes.blend.value;
     },
     goTo(url) {
       window.location = url;
@@ -68,6 +76,18 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.corner1
+  position: absolute
+  bottom: -10px
+  right: -10px
+  transform-origin: 110% 110%;
+  transform: scale(0.6)
+.corner2
+  position: absolute
+  bottom: -10px
+  left: 100px
+  transform-origin: bottom left;
+  transform: scaleX(-0.5) scaleY(0.5)
 .fade-enter-active, .fade-leave-active
   transition: opacity .5s
 

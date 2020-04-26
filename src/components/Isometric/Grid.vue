@@ -29,6 +29,6 @@ export default {
   position: absolute;
   top: -230%;
   width: 300em;
-  transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
+  transform: rotateX(55deg) rotateY(0deg) rotateZ(-45deg);
 }
 </style>
