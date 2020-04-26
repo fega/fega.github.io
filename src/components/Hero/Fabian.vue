@@ -1,6 +1,9 @@
 <template>
   <div :style="heroColor" class="hero">
+    <div class="hero-wrapper">
+
     <IsometricGrid />
+    <div class="light-experiment"/>
     <Corner class="corner1"/>
     <Corner class="corner2"/>
     <transition name="fade">
@@ -42,6 +45,8 @@
       </div>
     </div>
   </div>
+    </div>
+
 </template>
 
 <script>
@@ -102,7 +107,11 @@ export default {
   align-items: center
   background: #00F260
   background: linear-gradient(30deg, #ff00cc, #333399)
-
+  &-wrapper
+    display: flex
+    // position: relative
+    align-items: flex-start
+    width: 100%
   &-backdrop
     background-color: rgba(0,0,0,0)
     backdrop-filter: blur(2px)
