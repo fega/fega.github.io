@@ -67,6 +67,16 @@
         :buttons="project.buttons"/>
       </div>
     </div>
+    <footer>
+      <p>
+
+      <a href="https://iconscout.com/icons/youtube" target="_blank">Youtube Logo Icon</a> by <a href="https://iconscout.com/contributors/roundicons-com" target="_blank">Roundicons .com</a>
+      </p>
+      <p>
+
+      <a href="https://iconscout.com/icons/github" target="_blank">Github Logo Icon</a> by <a href="https://iconscout.com/contributors/roundicons-com" target="_blank">Roundicons .com</a>
+      </p>
+    </footer>
   </div>
 </template>
 

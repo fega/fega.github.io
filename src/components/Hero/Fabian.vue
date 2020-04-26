@@ -1,5 +1,16 @@
 <template>
   <div :style="heroColor" class="hero">
+    <IsometricGrid />
+    <transition name="fade">
+      <Phone v-if="!hoverName || hoverName==='linkedIn'" />
+    </transition>
+    <transition name="fade">
+      <Github v-if="hoverName==='github'" />
+    </transition>
+    <transition name="fade">
+    <Youtube v-if="hoverName==='youtube'" />
+    </transition>
+
     <div class="hero-backdrop">
       <div class="hero-subtitle">I'm Fabian Gutierrez.</div>
       <div class="hero-title">Node.js FullStack Developer</div>
@@ -8,16 +19,21 @@
         <flat-button
           class="button"
           color="#2196f3"
-          @mouseover="setColor"
+          @mouseover="setColor($event,'github')"
           @click="goTo('https://github.com/fega')"
         >GitHub</flat-button>
         <flat-button
-          color="#5e35b1"
+          color= "rgba(0,0,0,0)"
           class="button"
-          @mouseover="setColor"
-          @goTo="goTo('https://www.linkedin.com/in/fabiangutierreza/')"
+          @mouseover="setColor($event,'linkedIn')"
+          @click="goTo('https://www.linkedin.com/in/fabiangutierreza/')"
         >LinkedIn</flat-button>
-        <flat-button color="#c62828" class="button" @mouseover="setColor">Youtube</flat-button>
+        <flat-button
+          color="#c62828"
+          class="button"
+          @mouseover="setColor($event, 'youtube')"
+          @click="goTo('https://www.youtube.com/channel/UCSJWn-oCkNXxxUomuL1zz3g')"
+        >Youtube</flat-button>
       </div>
     </div>
   </div>
@@ -25,19 +41,23 @@
 
 <script>
 import FlatButton from "@/components/Basic/FlatButton";
-
+import Phone from "@/components/Isometric/PhoneAnimated";
+import Youtube from "@/components/Isometric/Youtube";
+import Github from "@/components/Isometric/Github";
+import IsometricGrid from "@/components/Isometric/Grid";
 export default {
-  components: { FlatButton },
+  components: { FlatButton, Phone, IsometricGrid, Youtube, Github },
   data() {
     return {
+      hoverName: null,
       heroColor: {
         backgroundColor: "rgba(0,0,0,0)"
       }
     };
   },
   methods: {
-    setColor(ev) {
-      console.log(ev.target.attributes.color.value);
+    setColor(ev, hover) {
+      this.hoverName = hover;
       this.heroColor.backgroundColor = ev.target.attributes.color.value;
     },
     goTo(url) {
@@ -47,17 +67,31 @@ export default {
 };
 </script>
 
-<style>
-.hero {
-  background-image: url("~assets/code.jpg");
-  background-blend-mode: luminosity;
-  display: flex;
-  align-items: center;
-}
-.hero-backdrop{
-  background-color: rgba(0,0,0,0.1);
-  backdrop-filter: blur(5px);
-  padding: 40px;
-  border-radius:15px;
-}
+<style lang="sass" scoped>
+.fade-enter-active, .fade-leave-active
+  transition: opacity .5s
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  opacity: 0
+
+.hero
+  overflow: hidden
+  background-blend-mode: saturation
+  display: flex
+  position: relative
+  align-items: center
+  background: #00F260
+  background: linear-gradient(30deg, #ff00cc, #333399)
+
+  &-backdrop
+    background-color: rgba(0,0,0,0)
+    backdrop-filter: blur(2px)
+    padding: 40px
+    border-radius: 15px
+    align-self: flex-start
+    @media (max-width: 768px)
+      background-color: rgba(0,0,0,0.2)
+      padding: 10px
+      backdrop-filter: blur(3px)
+      right: 100%
 </style>
