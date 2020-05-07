@@ -67,6 +67,12 @@
         :buttons="project.buttons"/>
       </div>
     </div>
+    <div class="subtitle-section" id="about">
+      <sub-title>Contact</sub-title>
+    </div>
+    <div class="flex-section">
+      <ContactButton />
+    </div>
     <footer>
       <p>
 
@@ -87,11 +93,13 @@ import FlatButton from "@/components/Basic/FlatButton";
 import MainButton from "@/components/Basic/Button";
 import ExperienceCard from "@/components/Cards/Experience";
 import ProjectCard from '@/components/Cards/Project'
+import ContactButton from '@/components/Buttons/Contact';
+
 import { fabian } from "@/data";
 
 export default {
   layout: "empty",
-  components: { FlatButton, MainButton, SubTitle, HeroSection, ExperienceCard,ProjectCard },
+  components: { FlatButton, MainButton, SubTitle, HeroSection, ExperienceCard, ProjectCard, ContactButton },
   data() {
     return {
       heroColor: {

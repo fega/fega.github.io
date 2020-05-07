@@ -1,7 +1,7 @@
 {
   "name": "portfolio-final",
   "version": "1.0.0",
-  "description": "fabian nomada&#39;s portfolio",
+  "description": "fabian nómada portfolio",
   "author": "Fabian Gutierrez",
   "private": true,
   "scripts": {
@@ -14,7 +14,8 @@
     "node-sass": "^4.14.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "vue-clipboard2": "^0.3.1"
   },
   "devDependencies": {}
 }

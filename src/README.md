@@ -6,7 +6,9 @@
 
 - [ ] Add Side projects
 - [ ] Add Featured youTube videos
-- [ ] Add Contact information
+- [x] Add Contact information
+- [ ] Add HotJar
+- [ ] Add Google Analytics
 
 ## Build Setup
 
