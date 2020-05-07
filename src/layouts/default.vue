@@ -11,6 +11,7 @@
         <b-navbar-item href="#about">About</b-navbar-item>
         <b-navbar-item href="#experience">Experience</b-navbar-item>
         <b-navbar-item href="#projects">Showcase</b-navbar-item>
+        <b-navbar-item href="#contact">Contact</b-navbar-item>
       </template>
     </b-navbar>
 

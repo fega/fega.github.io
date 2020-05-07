@@ -67,7 +67,7 @@
         :buttons="project.buttons"/>
       </div>
     </div>
-    <div class="subtitle-section" id="about">
+    <div class="subtitle-section" id="contact">
       <sub-title>Contact</sub-title>
     </div>
     <div class="flex-section">
