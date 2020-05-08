@@ -8,8 +8,15 @@
       <p>I'm a FullStack developer capable to lead projects from start or working in a team for a bigger goal.</p>
       <p>
         As a developer I feel that my mission is never stop learning and applying the industry's best practices.
-        for that reason I'm also a IT security specialist and an ISO27001, quality and hard work is my spoken language.
+        For that reason I'm also a IT security specialist and an ISO27001, quality and hard work is my spoken language.
       </p>
+      <p>
+        You can contact me at:
+      </p>
+      <br>
+      <div class="flex-section">
+        <ContactButton />
+      </div>
     </div>
     <div class="subtitle-section">
       <sub-title>CodersRank Profile</sub-title>
@@ -73,16 +80,7 @@
     <div class="flex-section">
       <ContactButton />
     </div>
-    <footer>
-      <p>
-
-      <a href="https://iconscout.com/icons/youtube" target="_blank">Youtube Logo Icon</a> by <a href="https://iconscout.com/contributors/roundicons-com" target="_blank">Roundicons .com</a>
-      </p>
-      <p>
-
-      <a href="https://iconscout.com/icons/github" target="_blank">Github Logo Icon</a> by <a href="https://iconscout.com/contributors/roundicons-com" target="_blank">Roundicons .com</a>
-      </p>
-    </footer>
+    <AppFooter />
   </div>
 </template>
 
@@ -94,12 +92,20 @@ import MainButton from "@/components/Basic/Button";
 import ExperienceCard from "@/components/Cards/Experience";
 import ProjectCard from '@/components/Cards/Project'
 import ContactButton from '@/components/Buttons/Contact';
-
+import AppFooter from '@/components/Basic/Footer';
 import { fabian } from "@/data";
 
 export default {
   layout: "empty",
-  components: { FlatButton, MainButton, SubTitle, HeroSection, ExperienceCard, ProjectCard, ContactButton },
+  components: { 
+    FlatButton, 
+    MainButton, 
+    SubTitle, 
+    HeroSection, 
+    ExperienceCard, 
+    ProjectCard, 
+    ContactButton, 
+    AppFooter },
   data() {
     return {
       heroColor: {

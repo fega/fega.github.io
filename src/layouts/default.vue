@@ -33,6 +33,9 @@ export default {
 .navbar
   background-color: transparent
   margin-bottom: -3.25em
+  position: absolute
+  width: 100%
+
 </style>
 
 <style lang="sass">
@@ -48,6 +51,7 @@ body, button, input, select, textarea
 .navbar-item, .navbar-link, .navbar-burger
   color: white
 .navbar-menu.is-active
+  background-color: rgba(255,255,255,0.9)
   .navbar-item, .navbar-link
     color: #4a4a4a
 
