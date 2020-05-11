@@ -33,37 +33,49 @@ export const fabian ={
   ],
   otherStack: [
     {
-      name: "GraphQl"
+      name: "GraphQl",
+      image: require('~/assets/icons/graphql.svg')
     },
     {
-      name: "Python"
+      name: "Python",
+      image: require('~/assets/icons/python.svg')
+
     },
     {
-      name: "Redis"
+      name: "Redis",
+      image: require('~/assets/icons/redis.svg')
     },
     {
-      name: "Git"
+      name: "Git",
+      image: require('~/assets/icons/git.svg')
     },
     {
-      name: "TDD"
+      name: "TDD",
     },
     {
-      name: "Docker"
+      name: "Docker",
+      image: require('~/assets/icons/docker.png')
     },
     {
-      name: "Google Cloud"
+      name: "Google Cloud",
+      image: require('~/assets/icons/gcloud.svg')
     },
     {
-      name: "Mocha"
+      name: "Mocha",
+      image: require('~/assets/icons/mocha.svg')
+
     },
     {
       name: "Jest"
     },
     {
-      name: "Ava"
+      name: "Ava",
+      image: require('~/assets/icons/ava.svg')
+
     },
     {
-      name: "Arduino"
+      name: "Arduino",
+      image: require('~/assets/icons/arduino.svg')
     },
     {
       name: "Bootstrap"
@@ -72,31 +84,38 @@ export const fabian ={
       name: "Vuetify"
     },
     {
-      name: "Socket.io"
+      name: "Socket.io",
+      image: require('~/assets/icons/socket-io.svg')
     },
     {
-      name: "JQuery"
+      name: "JQuery",
+      image: require('~/assets/icons/jquery.png')
+
     },
     {
-      name: "Heroku"
+      name: "Heroku",
+      image: require('~/assets/icons/heroku.svg')
     },
     {
-      name: "Puppeter"
+      name: "Puppeter",
+      image: require('~/assets/icons/pptr.png')
+
     },
     {
-      name: "Jira"
+      name: "Jira",
+      image: require('~/assets/icons/atlassian.svg')
     },
     {
-      name: "Sequelize"
+      name: "Sequelize",
     },
     {
       name: "ElasticSearch"
     },
     {
-      name: 'Google Cloud',
+      name: 'Firebase'
     },
     {
-      name: 'Firebase'
+      name: 'Kafka'
     }
   ],
   experience:[{

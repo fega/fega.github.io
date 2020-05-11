@@ -1,14 +1,20 @@
 <template>
+  <div>
+
   <section class="synth-hero">
     <Logo />
   </section>
+    <Plane />
+  </div>
 </template>
 
 <script>
-import Logo from './Logo'
+import Logo from './Logo';
+import Plane from './BackgroundPlane';
 export default {
   components:{
-    Logo
+    Logo,
+    Plane
   }
 }
 </script>

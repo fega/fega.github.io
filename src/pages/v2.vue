@@ -188,7 +188,6 @@ export default {
   },
   methods: {
     setColor(ev) {
-      console.log(ev.target.attributes.color.value);
       this.heroColor.backgroundColor = ev.target.attributes.color.value;
     },
     goTo(url) {

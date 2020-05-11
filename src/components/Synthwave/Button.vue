@@ -10,7 +10,8 @@
 <script>
 export default {
   props: {
-    color: { type: String, default: "white" }
+    color: { type: String, default: "white" },
+    dark: {type: Boolean}
   },
   data() {
     return {

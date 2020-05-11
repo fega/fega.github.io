@@ -21,14 +21,14 @@ export default {};
       clip: rect(random(100)+px,9999px,random(100)+px,0)
 
 .synth-logo
-  z-index: 100
+  z-index: 11
 
 @keyframes neon1
   from
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff,  0 0 40px #FF1177
 
   to
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #FF1177
 
 @keyframes synth
   from
@@ -54,12 +54,16 @@ export default {};
     text-shadow: none
 
 .synth-logo
-  // width: 100vw
   animation: noise-anim 2s infinite linear alternate-reverse
-  // height: 100vw
   margin-top: 50px
   margin-bottom: 20px
-  transform: scale(0.5)
+  transform: scale(0.6)
+  @media(max-width: 600px)
+    transform: scale(0.3)
+    margin-top: 0px
+    margin-bottom: 0px
+
+
 .name
   font-family: 'Audiowide'
   color: white
@@ -78,6 +82,7 @@ export default {};
   letter-spacing: 3px
   position: relative
   margin-top: 200px
+  margin-bottom: -10px
   // left: 24px
   // top: 30px
   z-index: 10

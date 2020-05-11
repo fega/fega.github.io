@@ -11,11 +11,15 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "dat.gui": "^0.7.7",
     "node-sass": "^4.14.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2",
+    "oimo": "^1.0.9",
     "sass-loader": "^8.0.2",
-    "vue-clipboard2": "^0.3.1"
+    "three": "^0.116.1",
+    "vue-clipboard2": "^0.3.1",
+    "vue-threejs": "^0.2.0-alpha.1"
   },
   "devDependencies": {}
 }
