@@ -23,6 +23,8 @@ export default {
   display: flex
   color: white
   margin-bottom: 40px
+  font-family: 'Audiowide'
+
   // background-color: black
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.15)
   border-radius: 50px
@@ -32,7 +34,9 @@ export default {
   transition: all 1s
   &:hover
     // box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3)
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff
+
     // background-color: #7957d533
   @media (max-width: 612px)
     font-size: 20px

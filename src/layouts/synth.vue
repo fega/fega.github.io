@@ -36,7 +36,7 @@ export default {
   position: absolute
   width: 100%
 .contact-button
-  text-shadow: 0 0 10px red,0 0 10px red,0 0 10px red, 0 0 20px red, 0 0 30px #fff, 0 0 40px white,0 0 35px #FF1177, 0 0 70px #FF1177, 0 0 100px #FF1177
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #FF1177, 0 0 20px #FF1177, 0 0 20px #FF1177
 
 </style>
 
@@ -46,9 +46,11 @@ html
 h1, h2, h3, h4, h5, h6
   font-size: 100%
   font-weight: 700
+  font-family: 'Audiowide'
 
 body, button, input, select, textarea
-  font-family: 'Audiowide'
+  font-family: 'Lato'
+  font-size: 1.1em
 html
   background: black
 .navbar
@@ -56,6 +58,8 @@ html
 
 .navbar-item, .navbar-link, .navbar-burger
   color: white
+  font-family: 'Audiowide'
+
 .navbar-menu.is-active
   background-color: rgba(0,0,0,0.4)
   .navbar-item, .navbar-link

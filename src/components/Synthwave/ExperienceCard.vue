@@ -46,7 +46,7 @@ export default {
   width: -webkit-fill-available
   margin: 20px 20px
   display: flex;
-  color: rgba(255,255,255,0.7)
+  color: rgba(255,255,255,0.8)
   h1,h2,h3,h4
     color: rgba(255,255,255,1)
 

@@ -76,7 +76,7 @@ export default {
     font-size: 1.2em
 
   & .subtitle
-    color: rgba(255,255,255,0.7)
+    color: rgba(255,255,255,0.8)
     font-size: 1em
   & .card-footer
     border-top: 1px solid black
@@ -84,8 +84,15 @@ export default {
     color: white
     box-shadow: 0 0 5px #00f3ff
     text-shadow: 0 0 5px #FF1177
+    transition: text-shadow,box-shadow 0.5s
+    &:hover
+      text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 10px #FF1177, 0 0 20px #FF1177, 0 0 32px #FF1177
+      box-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #00f3ff,0 0 20px #00f3ff
+      filter: drop-shadow(0 0 30px #ff00f0)
+      
+
   & img
-    transition: all 0.5s cubic-bezier(0.82, 0.09, 0.2, 1.01)
+    transition: transform 0.5s cubic-bezier(0.82, 0.09, 0.2, 1.01)
     transform: scale(1.2)
     &:hover
       transform: scale(1)

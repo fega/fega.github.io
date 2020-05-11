@@ -29,44 +29,60 @@ export default {
 
 <style lang="sass">
 // FADE
-.fade-enter-active, .fade-leave-active
-  transition: opacity 1s
-
-.fade-enter, .fade-leave-to
-  opacity: 0
+.fade
+  &-enter-active, &-leave-active
+    transition: opacity 1s
+  &-enter, &-leave-to
+    opacity: 0
 
 // SIDE
-.side-enter-active, .side-leave-active
+.side
+ &-enter-active,  &-leave-active
   transition: all 1s
+  text-shadow: none !important
+  animation: none !important
+  will-change: opacity, transform, text-shadow
 
-.side-enter, .side-leave-to
-  transform: translate(-100px)
+ &-enter,  &-leave-to
+  transform: translate(-200px)
   opacity: 0
 
 // OTHER SIDE
-.side2-enter-active, .side2-leave-active
-  transition: all 2s
+.side2
+  &-enter-active, &-leave-active
+    transition: all 1s
+    text-shadow: none !important
+    will-change: opacity, transform
 
-.side2-enter, .side2-leave-to
-  transform: translate(150px)
-  opacity: 0
+
+  &-enter, &-leave-to
+    transform: translate(550px)
+    opacity: 0
 
 
 // UP
-.up-enter-active, .up-leave-active
-  transition: all 2s
+.up
+  &-enter-active, &-leave-active
+    transition: all 2s
+    will-change: opacity, transform, text-shadow
 
-.up-enter, .up-leave-to
-  transform: translateY(10px) !important
-  opacity: 0
+  &-enter, &-leave-to
+    transform: translateY(-100px) !important
+    color: #FF1177 !important
+    animation: none !important
+    text-shadow: none !important
+    opacity: 0
 
 // OTHER SIDE
-.shrink-enter-active, .shrink-leave-active
-  transition: all 4s
+.shrink
+  &-enter-active, &-leave-active
+    transition: all 4s
+    will-change: opacity, transform
 
-.shrink-enter, .shrink-leave-to
-  transform: scale(1.5)
-  opacity: 0
+  &-enter, &-leave-to
+    transform: scale(1.5)
+    opacity: 0
+
 
 
 </style>

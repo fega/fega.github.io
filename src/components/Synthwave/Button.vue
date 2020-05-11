@@ -28,6 +28,7 @@ export default {
   background-color: transparent;
   font-size: 1em;
   // color: rgba(0, 0, 0, 0.8);
+
   border: none;
   margin: 5px;
   display: flex;
@@ -39,8 +40,10 @@ export default {
   padding: 12px;
   padding-left: 12px;
   padding-right: 17px;
+  box-shadow: 0 0 5px white, 0 0 10px #00f3ff;
   &:hover {
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px white, 0 0 10px white, 0 0 15px #FF1177, 0 0 20px #FF1177;
+
   }
   img {
     height: 21px;
