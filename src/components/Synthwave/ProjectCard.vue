@@ -1,5 +1,5 @@
 <template>
-  <div class="v2-project-card">
+  <div class="v2-project-card lax" data-lax-preset="driftFade3">
     <div class="card">
       <div class="card-image">
         <figure class="image" style="overflow: hidden">
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import lax from 'lax.js'
 export default {
   props: {
     image: {
@@ -55,6 +56,10 @@ export default {
     buttons: {
       default: () => ({})
     }
+  },
+  mounted(){
+    console.log('ADDING LAX PROJECT')
+    lax.addElement(this.$el)
   }
 };
 </script>

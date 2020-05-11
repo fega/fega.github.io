@@ -1,13 +1,13 @@
 <template>
   <div class="synth-container">
-    <div class="synth-logo">
+    <div class="synth-logo lax" ref="logo">
       <transition name="vapor" mode="out-in"  duration>
         <FabianLogo v-if="show==='logo'" key="logo" />
         <VaporSun v-if="show==='vapor'" key="vapor"/>
         <VaporSunYoutube v-if="show==='youtube'" key="youtube"/>
       </transition>
     </div>
-    <div class="hero-buttons">
+    <div  class="hero-buttons lax" data-lax-preset="eager2 fadeOut" ref="heroButtons">
       <flat-button
         class="button"
         color="#2196f3"
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import lax from 'lax.js'
 import FlatButton from "./FlatButton";
 import VaporSun from './VaporSun';
 import VaporSunYoutube from './VaporSunYoutube';
@@ -50,7 +51,10 @@ export default {
       show: "logo"
     };
   },
-  mounted() {},
+  mounted() {
+    lax.addElement(this.$refs.heroButtons)
+    lax.addElement(this.$refs.logo)
+  },
   methods: {
     setColor(_, name) {
       this.show = name;

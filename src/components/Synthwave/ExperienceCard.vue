@@ -1,5 +1,5 @@
 <template>
-  <div class="experience-card">
+  <div class="experience-card lax" data-lax-preset="driftFade3">
     <div class="experience-card__logo-container">
       <img class="experience-card__logo" :src="image" :alt="title">
     </div>
@@ -17,7 +17,11 @@
 </template>
 
 <script>
+import lax from 'lax.js'
 export default {
+  mounted(){
+    lax.addElement(this.$el)
+  },
   props: {
     description: {
       type: String
@@ -57,7 +61,7 @@ export default {
   &__title
     text-shadow: 0 0 10px #fff, 0 0 20px #FF1177, 0 0 25px #FF1177
   &__date
-    color: rgba(0, 0, 0, 0.5)
+    color: rgba(255, 255, 255, 0.5)
     font-style: italic
   &__logo
     background-color: red;

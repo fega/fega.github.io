@@ -22,9 +22,47 @@
 </template>
 
 <script>
+import lax from "lax.js";
 export default {
   data() {
     return {};
+  },
+  beforeMount() {
+    lax.setup(); // init
+    console.log('adding preset!!!!')
+    lax.addPreset("driftFade", function() {
+      return {
+        "data-lax-opacity": "vh 0, (vh*0.9) 0, (vh*0.6) 1,-100 1, ,-200 0",
+        // "data-lax-translate-x": "vh -50, (vh*0.8) -50, (vh*0.6) 0",
+        "data-lax-anchor":"self"
+      };
+    });
+    lax.addPreset("driftFade2", function() {
+      return {
+        "data-lax-opacity": "vh 0, (vh*0.6) 0, (vh*0.5) 1",
+        "data-lax-translate-y": "vh 150, (vh*0.7) 150, (vh*0.5) 0",
+        "data-lax-anchor":"self"
+      };
+    });
+    lax.addPreset("driftFade3", function() {
+      return {
+        "data-lax-opacity": "vh 0, (vh*0.4) 0, (vh*0.2) 1",
+        "data-lax-translate-y": "vh 50, (vh*0.4) 50, (vh*0.2) 0",
+        "data-lax-anchor":"self"
+      };
+    });
+    lax.addPreset("eager2", function() {
+      return {
+        "data-lax-anchor":"self",
+        "data-lax-translate-y": `(vh) 0, (elh) -50` 
+      };
+    });
+    const updateLax = () => {
+      lax.update(window.scrollY);
+      window.requestAnimationFrame(updateLax);
+    };
+
+    window.requestAnimationFrame(updateLax);
   }
 };
 </script>
@@ -37,7 +75,6 @@ export default {
   width: 100%
 .contact-button
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #FF1177, 0 0 20px #FF1177, 0 0 20px #FF1177
-
 </style>
 
 <style lang="sass">
@@ -73,5 +110,4 @@ a.navbar-item:hover
   transition: all 0.5s
   color: white
   text-shadow: 0 0 10px #fff,0 0 10px #fff,0 0 10px #fff, 0 0 20px #fff,0 0 25px #fff, 0 0 30px #fff, 0 0 40px #FF1177,0 0 35px #FF1177, 0 0 70px #FF1177, 0 0 100px #FF1177
-
 </style>

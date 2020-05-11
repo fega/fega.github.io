@@ -1,10 +1,8 @@
 <template>
   <div>
-
   <section class="synth-hero">
     <Logo />
   </section>
-    <Plane />
   </div>
 </template>
 
@@ -14,7 +12,6 @@ import Logo from './Logo';
 export default {
   components:{
     Logo,
-    // Plane
   }
 }
 </script>

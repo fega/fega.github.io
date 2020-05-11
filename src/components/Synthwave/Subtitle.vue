@@ -1,10 +1,13 @@
 <template>
-  <h2 class="synth-subtitle"><slot /></h2>
+  <h2 ref="subtitle" class="synth-subtitle lax" data-lax-preset="driftFade eager2"><slot /></h2>
 </template>
 
 <script>
+import lax from 'lax.js'
 export default {
-
+  mounted(){
+    lax.addElement(this.$refs.subtitle)
+  }
 }
 </script>
 

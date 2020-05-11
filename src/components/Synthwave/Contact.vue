@@ -1,12 +1,16 @@
 <template>
-  <div v-clipboard:copy="'fega.hg@gmail.com'"       v-clipboard:success="onCopy" class="contact-button">
+  <div  v-clipboard:copy="'fega.hg@gmail.com'"       v-clipboard:success="onCopy" class="contact-button lax" data-lax-preset="driftFade2">
     <div class="contact-button__email">fega.hg@gmail.com</div>
     <div class="contact-button__copy">Click to copy</div>
   </div>
 </template>
 
 <script>
+import lax from 'lax.js'
 export default {
+  mounted(){
+    lax.addElement(this.$el)
+  },
   methods:{
     onCopy() {
       alert('Email copied')
