@@ -14,6 +14,14 @@ export default {};
 <style lang="sass" scoped>
 @import url(https://fonts.googleapis.com/css?family=Audiowide)
 @import url(https://fonts.googleapis.com/css?family=Mr+Dafoe)
+@keyframes noise-anim
+  $steps: 20
+  @for $i from 0 through $steps
+    #{percentage($i*(1/$steps))}
+      clip: rect(random(100)+px,9999px,random(100)+px,0)
+
+.synth-logo
+  z-index: 100
 
 @keyframes neon1
   from
@@ -21,7 +29,6 @@ export default {};
 
   to
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177
-
 
 @keyframes synth
   from
@@ -44,13 +51,15 @@ export default {};
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00f3ff, 0 0 35px #00f3ff
 
   90%
-    text-shadow: none;
-
+    text-shadow: none
 
 .synth-logo
-  margin-top: 100px
-  margin-bottom: 50px
-  transform: scale(0.6)
+  // width: 100vw
+  animation: noise-anim 2s infinite linear alternate-reverse
+  // height: 100vw
+  margin-top: 50px
+  margin-bottom: 20px
+  transform: scale(0.5)
 .name
   font-family: 'Audiowide'
   color: white
@@ -59,6 +68,8 @@ export default {};
   position: relative
   left: 24px
   top: 30px
+  animation: noise-anim 2s infinite linear alternate-reverse
+
   z-index: 3
 .description
   font-family: 'Audiowide'

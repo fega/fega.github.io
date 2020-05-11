@@ -148,6 +148,7 @@ export const fabian ={
     description: "Bliss lets you book flights instantly and pay for them over time.",
     roles: ['BackEnd', 'FrontEnd'],
     image: require('~/assets/projects/bliss.png'),
+    color: '#00ffa8',
     buttons:{
       url: 'https://5e5f3f418ac420de08353d0e--naughty-goldstine-601997.netlify.app'
     }
@@ -164,6 +165,7 @@ export const fabian ={
     description:"Shop modern products at huge discounts.",
     roles: ['FrontEnd'],
     image: require('~/assets/projects/craftco.png'),
+    color:'red',
     buttons:{
       url:"https://simpli-app.herokuapp.com/"
     },
@@ -172,6 +174,7 @@ export const fabian ={
     description: "Flightdrop finds and alerts you on incredibly cheap flights, guaranteed to be 50-70% off regular price. ",
     image: require('~/assets/projects/flightdrop.jpg'),
     roles: ['FrontEnd', "Backend", "Mobile"],
+    color:'pink',
     buttons:{
       appStore: "https://apps.apple.com/us/app/flightdrop-huge-flight-deals/id1325279425"
     }
@@ -180,6 +183,7 @@ export const fabian ={
     description: "GPS Tracker Responsive WebPage",
     image: require('~/assets/projects/gps-tracker.png'),
     roles: ['FrontEnd', 'Backend Integration'],
+    color:'blue',
     buttons:{
       url:"http://www.gpstrackerls.com/"
     }
@@ -188,12 +192,14 @@ export const fabian ={
     description: "Gastronomic tours website",
     image: require('~/assets/projects/meloway.png'),
     roles: ['FrontEnd', 'Backend Integration'],
+    color:'purple',
     buttons:{
       url:"http://www.meloway.com/"
     }
   },{
     title: 'Maravillarte',
     description:"E-commerce for handicraft made items",
+    color:'purple',
     image: require('~/assets/projects/maravillarte.png'),
     roles: ['FrontEnd', 'Backend']
   }],
