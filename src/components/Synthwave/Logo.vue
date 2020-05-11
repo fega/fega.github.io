@@ -1,28 +1,63 @@
 <template>
-  <div class="synth-logo">
-    <transition name="side2" appear>
-    <div class="name" v-if="show">Fabian Gutierrez</div>
-    </transition>
-    <transition name="side" appear>
-      <div class="synth" data-text="FullStack" v-if="show"></div>
-    </transition>
-    <transition name="up" appear>
-      <div class="neon" v-if="show">Developer</div>
-    </transition>
-    <transition name="shrink" appear>
-    <div class="description" v-if="show">Javascript expert ● IT Security Specialist</div>
-    </transition>
+  <div class="synth-container">
+    <div class="synth-logo">
+      <transition name="vapor" mode="out-in"  duration>
+        <FabianLogo v-if="show==='logo'" key="logo" />
+        <VaporSun v-if="show==='vapor'" key="vapor"/>
+        <VaporSunYoutube v-if="show==='youtube'" key="youtube"/>
+      </transition>
+    </div>
+    <div class="hero-buttons">
+      <flat-button
+        class="button"
+        color="#2196f3"
+        blend="saturation"
+        @mouseover="setColor($event,'vapor')"
+        @click="goTo('https://github.com/fega')"
+      >GitHub</flat-button>
+      <flat-button
+        color="rgba(0,0,0,0)"
+        class="button"
+        blend="saturation"
+        @mouseover="setColor($event,'logo')"
+        @click="goTo('https://www.linkedin.com/in/fabiangutierreza/')"
+      >LinkedIn</flat-button>
+      <flat-button
+        color="#c62828"
+        class="button"
+        blend="multiply"
+        @mouseover="setColor($event, 'youtube')"
+        @click="goTo('https://www.youtube.com/channel/UCSJWn-oCkNXxxUomuL1zz3g')"
+      >Youtube</flat-button>
+    </div>
   </div>
 </template>
 
 <script>
+import FlatButton from "./FlatButton";
+import VaporSun from './VaporSun';
+import VaporSunYoutube from './VaporSunYoutube';
+import FabianLogo from './FabianLogo';
 export default {
+  components: {
+    FlatButton,
+    VaporSun,
+    FabianLogo,
+    VaporSunYoutube
+  },
   data() {
     return {
-      show: true,
+      show: "logo"
     };
   },
-  mounted() {
+  mounted() {},
+  methods: {
+    setColor(_, name) {
+      this.show = name;
+    },
+    goTo(url) {
+      window.location = url;
+    }
   }
 };
 </script>
@@ -31,21 +66,30 @@ export default {
 // FADE
 .fade
   &-enter-active, &-leave-active
+    transition: opacity 0.5s
+  &-enter, &-leave-to
+    opacity: 0
+// FADE LOG
+.fade-long
+  &-enter-active, &-leave-active
     transition: opacity 1s
+    transition-delay: 1s
+    transition-duration: 1s
+    transition-timing-function: linear
   &-enter, &-leave-to
     opacity: 0
 
 // SIDE
 .side
- &-enter-active,  &-leave-active
-  transition: all 1s
-  text-shadow: none !important
-  animation: none !important
-  will-change: opacity, transform, text-shadow
+  &-enter-active,  &-leave-active
+    transition: all 1s
+    text-shadow: none !important
+    animation: none !important
+    will-change: opacity, transform, text-shadow
 
- &-enter,  &-leave-to
-  transform: translate(-200px)
-  opacity: 0
+  &-enter,  &-leave-to
+    transform: translate(-200px)
+    opacity: 0
 
 // OTHER SIDE
 .side2
@@ -54,16 +98,14 @@ export default {
     text-shadow: none !important
     will-change: opacity, transform
 
-
   &-enter, &-leave-to
     transform: translate(550px)
     opacity: 0
 
-
 // UP
 .up
   &-enter-active, &-leave-active
-    transition: all 2s
+    transition: all 1s
     will-change: opacity, transform, text-shadow
 
   &-enter, &-leave-to
@@ -73,146 +115,45 @@ export default {
     text-shadow: none !important
     opacity: 0
 
+.vapor
+  &-enter-active, &-leave-active
+    transition: all 1s
+    will-change: opacity, transform
+
+  &-enter, &-leave-to
+    transform: translateY(100px)
+    opacity: 0
+
+
 // OTHER SIDE
 .shrink
   &-enter-active, &-leave-active
-    transition: all 4s
+    transition: all 1s
     will-change: opacity, transform
 
   &-enter, &-leave-to
     transform: scale(1.5)
     opacity: 0
-
-
-
 </style>
 
 <style lang="sass" scoped>
-@keyframes noise-anim
-  $steps: 20
-  @for $i from 0 through $steps
-    #{percentage($i*(1/$steps))}
-      clip: rect(random(100)+px,9999px,random(100)+px,0)
-
 .synth-logo
   z-index: 11
 
-@keyframes neon1
-  from
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff,  0 0 40px #FF1177
-
-  to
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #FF1177
-
-@keyframes synth
-  from
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #00f3ff
-
-  7%
-    text-shadow: none
-  14%
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #00f3ff
-
-  17%
-    text-shadow: none
-  25%
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #00f3ff
-
-  50%
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00f3ff, 0 0 35px #00f3ff
-
-  80%
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00f3ff, 0 0 35px #00f3ff
-
-  90%
-    text-shadow: none
-
-.synth-logo
-  animation: noise-anim 2s infinite linear alternate-reverse
-  margin-top: 50px
+.synth-container
+  width: 100%
+  display: flex;
+  align-items: center;
+  flex-direction: column
   margin-bottom: 20px
-  transform: scale(0.6)
-  @media(max-width: 900px)
-    transform: scale(0.45)
-  @media(max-width: 600px)
-    transform: scale(0.3)
-    margin-top: 0px
-    margin-bottom: 0px
+  // height: 500px;
 
-.name
-  font-family: 'Audiowide'
-  color: white
-  font-size: 40px
-  letter-spacing: 30px
-  position: relative
-  left: 24px
-  top: 30px
-  animation: noise-anim 2s infinite linear alternate-reverse
+.hero-buttons
+  display: flex
+  margin-top: 60px
+  // position: absolute
+  width: 100%
+  top: 400px
+  z-index: 12
 
-  z-index: 3
-.description
-  font-family: 'Audiowide'
-  color: white
-  font-size: 40px
-  letter-spacing: 3px
-  position: relative
-  margin-top: 200px
-  margin-bottom: -10px
-  // left: 24px
-  // top: 30px
-  z-index: 10
-.neon
-  grid-area: NEON
-  animation: neon1 1.5s ease-in-out infinite alternate
-  z-index: 2
-  font-family: 'Mr Dafoe', cursive
-  font-size: 150px
-  font-weight: 100
-  color: #fff
-  filter: drop-shadow(0 0 22px #ff00f0)
-  line-height: 1
-  transform: rotateZ(-20deg)
-  transform-origin: center left
-  align-self: flex-end
-  position: absolute
-  right: 0px
-.synth
-  grid-area: SYNTH
-  line-height: 1
-
-  filter: drop-shadow(0 0 40px #12208a)
-  $stroke: 10px
-  &[data-text]
-    display: inline-block
-    font-size: 150px
-    font-weight: normal
-    font-family: 'Audiowide', sans-serif
-    text-transform: uppercase
-    letter-spacing: .065em
-    position: relative
-    margin: $stroke
-    letter-spacing: 0px
-
-    &:before
-      content: attr(data-text)
-      // text-shadow: 0 0 50px #12208a
-      animation: synth 4.0s ease-in-out infinite
-
-      background: linear-gradient(to bottom, white 0%, white 19%, #b7e3fe 30%, #3346bc 40%, white 60%, #3346bc 80%, #b7e3fe 100%)
-      -webkit-text-stroke: $stroke transparent
-      -webkit-background-clip: text
-      background-clip: text
-      color: transparent
-      padding: $stroke
-
-    &:after
-      padding: $stroke
-      content: attr(data-text)
-      left: 0
-      top: -$stroke
-      position: absolute
-      background-image: linear-gradient(to bottom, black 10%, #3557c6 23%, #00f3ff 35%, white 48%, black 48%, #7f158f 66%, #ff4caf 85%)
-      -webkit-background-clip: text
-      background-clip: text
-      color: transparent
 </style>

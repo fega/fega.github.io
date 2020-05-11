@@ -12,6 +12,6 @@ export default {
 .synth-subtitle
   color: white
   font-size: 2.5em
-  text-shadow: 0 0 5px #fff, 0 0 20px #00f3ff, 0 0 35px #00f3ff
+  text-shadow: 0 0 5px #fff, 0 0 20px #00f3ff
   margin-bottom: 20px
 </style>

@@ -1,6 +1,5 @@
 <template>
   <a 
-    :class="{ dark }" 
     :style="style"
     class="button"
     v-on="$listeners"
@@ -10,7 +9,7 @@
 <script>
 export default {
   props: {
-    color: { type: String, default: "white" },
+    // color: { type: String, default: "black" },
     dark: {type: Boolean}
   },
   data() {
@@ -25,10 +24,11 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  background-color: transparent;
-  font-size: 1em;
+  background-color: black;
+  color: white;
+  font-size: 1.1em;
   // color: rgba(0, 0, 0, 0.8);
-
+  cursor: default;
   border: none;
   margin: 5px;
   display: flex;
@@ -40,7 +40,7 @@ export default {
   padding: 12px;
   padding-left: 12px;
   padding-right: 17px;
-  box-shadow: 0 0 5px white, 0 0 10px #00f3ff;
+  box-shadow: 0 0 5px white, 0 0 5px #00f3ff;
   &:hover {
     box-shadow: 0 0 10px white, 0 0 10px white, 0 0 15px #FF1177, 0 0 20px #FF1177;
 
