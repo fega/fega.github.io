@@ -10,11 +10,11 @@
 
 <script>
 import Logo from './Logo';
-import Plane from './BackgroundPlane';
+// import Plane from './BackgroundPlane';
 export default {
   components:{
     Logo,
-    Plane
+    // Plane
   }
 }
 </script>

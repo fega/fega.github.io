@@ -1,19 +1,77 @@
 <template>
   <div class="synth-logo">
-    <div class="name">Fabian Gutierrez</div>
-    <div class="synth" data-text="FullStack"></div>
-    <div class="neon">Developer</div>
-    <div class="description">Javascript expert ● IT Security Specialist</div>
+    <transition name="side2" appear>
+    <div class="name" v-if="show">Fabian Gutierrez</div>
+    </transition>
+    <transition name="side" appear>
+      <div class="synth" data-text="FullStack" v-if="show"></div>
+    </transition>
+    <transition name="up" appear>
+      <div class="neon" v-if="show">Developer</div>
+    </transition>
+    <transition name="shrink" appear>
+    <div class="description" v-if="show">Javascript expert ● IT Security Specialist</div>
+    </transition>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      show: true,
+    };
+  },
+  mounted() {
+  }
+};
 </script>
 
+<style lang="sass">
+// FADE
+.fade-enter-active, .fade-leave-active
+  transition: opacity 1s
+
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+// SIDE
+.side-enter-active, .side-leave-active
+  transition: all 1s
+
+.side-enter, .side-leave-to
+  transform: translate(-100px)
+  opacity: 0
+
+// OTHER SIDE
+.side2-enter-active, .side2-leave-active
+  transition: all 2s
+
+.side2-enter, .side2-leave-to
+  transform: translate(150px)
+  opacity: 0
+
+
+// UP
+.up-enter-active, .up-leave-active
+  transition: all 2s
+
+.up-enter, .up-leave-to
+  transform: translateY(10px) !important
+  opacity: 0
+
+// OTHER SIDE
+.shrink-enter-active, .shrink-leave-active
+  transition: all 4s
+
+.shrink-enter, .shrink-leave-to
+  transform: scale(1.5)
+  opacity: 0
+
+
+</style>
+
 <style lang="sass" scoped>
-@import url(https://fonts.googleapis.com/css?family=Audiowide)
-@import url(https://fonts.googleapis.com/css?family=Mr+Dafoe)
 @keyframes noise-anim
   $steps: 20
   @for $i from 0 through $steps
@@ -58,11 +116,12 @@ export default {};
   margin-top: 50px
   margin-bottom: 20px
   transform: scale(0.6)
+  @media(max-width: 900px)
+    transform: scale(0.45)
   @media(max-width: 600px)
     transform: scale(0.3)
     margin-top: 0px
     margin-bottom: 0px
-
 
 .name
   font-family: 'Audiowide'

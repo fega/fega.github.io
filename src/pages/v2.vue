@@ -17,7 +17,7 @@
     </section>
     <section class="v2-section" id="codersrank">
       <Subtitle>CodersRank Profile</Subtitle>
-      <codersrank-widget username="fega" badges="3" style=" --header-bg-color: #222"></codersrank-widget>
+      <codersrank-widget username="fega" badges="3" style=" --header-bg-color: #000; --bg-color: black"></codersrank-widget>
       <br />
     </section>
     <section class="v2-section" id="main-stack">
@@ -72,89 +72,6 @@
     </section>
     <FooterSection />
   </div>
-  <!-- <div>
-    <HeroSection />
-    <div class="subtitle-section" id="about">
-      <sub-title>About me</sub-title>
-    </div>
-    <div class="text-section">
-      <p>I'm a FullStack developer capable to lead projects from start or working in a team for a bigger goal.</p>
-      <p>
-        As a developer I feel that my mission is never stop learning and applying the industry's best practices.
-        For that reason I'm also a IT security specialist and an ISO27001, quality and hard work is my spoken language.
-      </p>
-      <p>
-        You can contact me at:
-      </p>
-      <br>
-      <div class="flex-section">
-        <ContactButton />
-      </div>
-    </div>
-    <div class="subtitle-section">
-      <sub-title>CodersRank Profile</sub-title>
-    </div>
-    <div class="text-section">
-      <codersrank-widget username="fega" badges="3" style=" --header-bg-color: #222"></codersrank-widget>
-    </div>
-
-    <div class="subtitle-section">
-      <sub-title>My main stack</sub-title>
-    </div>
-    <div class="flex-section">
-      <main-button v-for="tech in fabian.mainStack" :key="tech.image" color="white">
-        <img :src="tech.image" />
-        {{ tech.name }}
-      </main-button>
-    </div>
-    <div class="subtitle-section">
-      <sub-title>Experience with:</sub-title>
-    </div>
-    <div class="flex-section">
-      <main-button v-for="tech in fabian.otherStack" :key="tech.image" color="white">
-        <img :src="tech.image" />
-        {{ tech.name }}
-      </main-button>
-    </div>
-    <div class="subtitle-section" id="experience">
-      <sub-title>Node.js Professional Experience:</sub-title>
-    </div>
-    <div class="flex-section column">
-      <experience-card
-        v-for="e in fabian.experience"
-        :key="e.description"
-        :description="e.description"
-        :company="e.company"
-        :title="e.title"
-        :start="e.start"
-        :end="e.end"
-        :image="e.image"
-      />
-    </div>
-    <div class="subtitle-section" id="projects">
-      <sub-title>Profesional Projects</sub-title>
-    </div>
-    <div class="text-section">
-      <p>Some of my professional work:</p>
-      <div style="display: flex; flex-wrap: wrap">
-
-      <ProjectCard 
-        v-for="project in fabian.professionalProjects" 
-        :key="project.key"
-        :title="project.title"
-        :description="project.description"
-        :image="project.image"
-        :buttons="project.buttons"/>
-      </div>
-    </div>
-    <div class="subtitle-section" id="contact">
-      <sub-title>Contact</sub-title>
-    </div>
-    <div class="flex-section">
-      <ContactButton />
-    </div>
-    <AppFooter />
-  </div>-->
 </template>
 
 <script>
@@ -202,6 +119,9 @@ export default {
   max-width: 800px
   margin: auto
   margin-bottom: 20px
+  @media (max-width: 820px)
+    padding-left: 20px
+    padding-right: 20px
   &.flex
     display: flex
     flex-wrap: wrap
