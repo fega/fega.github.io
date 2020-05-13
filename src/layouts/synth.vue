@@ -32,7 +32,7 @@ export default {
     console.log('adding preset!!!!')
     lax.addPreset("driftFade", function() {
       return {
-        "data-lax-opacity": "vh 0, (vh*0.9) 0, (vh*0.6) 1,-100 1, ,-200 0",
+        "data-lax-opacity": "vh 0, (vh*0.9) 0, (vh*0.6) 1, -vh 0",
         // "data-lax-translate-x": "vh -50, (vh*0.8) -50, (vh*0.6) 0",
         "data-lax-anchor":"self"
       };
@@ -54,7 +54,7 @@ export default {
     lax.addPreset("eager2", function() {
       return {
         "data-lax-anchor":"self",
-        "data-lax-translate-y": `(vh) 0, (elh) -50` 
+        "data-lax-translate-y": `(vh) 0, (elh) -20` 
       };
     });
     const updateLax = () => {

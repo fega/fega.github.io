@@ -7,7 +7,7 @@
         <VaporSunYoutube v-if="show==='youtube'" key="youtube"/>
       </transition>
     </div>
-    <div  class="hero-buttons lax" data-lax-preset="eager2 fadeOut" ref="heroButtons">
+    <div  class="hero-buttons lax" data-lax-preset="eager2" ref="heroButtons">
       <flat-button
         class="button"
         color="#2196f3"
