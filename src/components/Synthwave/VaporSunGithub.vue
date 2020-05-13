@@ -1,7 +1,6 @@
 <template>
     <div class="scene">
-      <div class="container-sun">
-        <div class="gradient"></div>
+      <div class="container">
         <div class="sun"></div>
         <div class="band" style="animation-delay: -0s"></div>
         <div class="band" style="animation-delay: -1s"></div>
@@ -13,21 +12,19 @@
         <div class="band" style="animation-delay: -7s"></div>
         <div class="band" style="animation-delay: -8s"></div>
         <div class="band" style="animation-delay: -9s"></div>
-        <City class="city"/>
+        <transition appear name="fade-long">
+          <img class="logo" v-if="true" src="~/assets/icons/github.svg">
+        </transition>
       </div>
     </div>
 </template>
 
 <script>
-import City from '@/components/svg/City';
-
-export default {
-  components:{City}
-};
+export default {};
 </script>
 
 <style lang="sass" scoped>
-$bg: #033b71
+$bg: #000
 $size: 30vw
 .logo
   transform: scale(0.5)
@@ -36,18 +33,21 @@ $size: 30vw
   justify-content: center
   align-items: center
   width: 100%
-  background-color: $bg
-  margin-top: 70px
-  // padding-top: 10px
-  animation: hue-rotate-contrast 60s ease-in-out infinite 5s
-  
+  // background-color: $bg
   filter: blur(2px) contrast(3)
-  overflow: hidden
-.container-sun
+  height: 500px
+  margin-bottom: -50px
+  @media(max-width: 900px)
+    height: 400px
+
+  @media(max-width: 600px)
+    filter: blur(1px) contrast(3)
+    height: 200px
+    margin-top: 50px
+.container
   position: relative
   height: $size
-  width: 100%
-  // width: $size
+  width: $size
   overflow: hidden
 
 .sun
@@ -68,17 +68,7 @@ $size: 30vw
   height: 10%
   background: $bg
   animation: wave 10s linear infinite
-.city
-  z-index: 10
-  position: relative
-  bottom: -30%
-  width: 100%
-.gradient
-  position: absolute
-  top: -12px
-  width: 100%
-  height: 40%
-  background: linear-gradient(to bottom, black, $bg)
+
 @keyframes wave
   0%
     transform: translateY(0) scaleY(1)
@@ -86,17 +76,10 @@ $size: 30vw
   100%
     transform: translateY($size*-0.8) scaleY(0)
 
-@keyframes hue-rotate
-  0%
-    filter: hue-rotate(360deg)
+// @keyframes hue-rotate
+//   0%
+//     filter: hue-rotate(360deg)
 
-  100%
-    filter: hue-rotate(0deg)
-
-@keyframes hue-rotate-contrast
-  0%
-    filter: hue-rotate(360deg)  blur(2px) contrast(3)
-
-  100%
-    filter: hue-rotate(0deg) blur(2px) contrast(3)
+//   100%
+//     filter: hue-rotate(0deg)
 </style>

@@ -36,7 +36,7 @@
 <script>
 import lax from 'lax.js'
 import FlatButton from "./FlatButton";
-import VaporSun from './VaporSun';
+import VaporSun from './VaporSunGithub';
 import VaporSunYoutube from './VaporSunYoutube';
 import FabianLogo from './FabianLogo';
 export default {

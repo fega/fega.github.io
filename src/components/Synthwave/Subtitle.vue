@@ -17,6 +17,6 @@ export default {
   font-size: 2.5em
   text-shadow: 0 0 5px #fff, 0 0 20px #00f3ff
   margin-bottom: 20px
-  @media (max-width: 600)
+  @media (max-width: 600px)
     font-size: 1.5em
 </style>

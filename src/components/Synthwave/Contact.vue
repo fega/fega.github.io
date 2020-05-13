@@ -50,6 +50,8 @@ export default {
     border: 2px solid white
     padding: 10px
     margin: none
+    display: flex;
+    align-items: center
   &__email
     border-radius: 50px 0 0px 50px
     padding-left: 50px
