@@ -2,7 +2,7 @@
   <footer class=".footer">
     <p class="footer__main">Made with ❤️ By Fabian Gutierrez</p>
     <VaporSun class="footer__vapor-sun"/>
-    <!-- <City class="footer__city"/> -->
+    <Grid class="footer__grid"/>
     <p class="footer__credits credits-1">
       <a href="https://iconscout.com/icons/youtube" target="_blank">Youtube Logo Icon</a> by
       <a href="https://iconscout.com/contributors/roundicons-com" target="_blank">Roundicons .com</a>
@@ -17,10 +17,12 @@
 <script>
 import VaporSun from './VaporSun';
 import City from '@/components/svg/City';
+import Grid from '@/components/svg/Grid';
 export default {
   components:{
     VaporSun,
-    City
+    City,
+    Grid
   }
 };
 </script>
@@ -29,7 +31,7 @@ export default {
 footer
   // padding: 20px
   // border-top: 1px solid #00f3ff
-  background: #002f5c
+  background: #black
   position: relative
 .footer
   &__main
@@ -56,6 +58,22 @@ footer
     left: 10px
     &.credits-1
       bottom: 5px
+  &__grid
+    width: 100%
+    animation: neon-grid 1.5s ease-in-out infinite alternate
+
+    margin-bottom: -20px
+
+@keyframes neon-grid
+  from
+    box-shadow: 0 0 10px #fff,0 0 10px #fff,  0 0 20px #FF1177
+    filter: drop-shadow(0 0 2px #fff)  drop-shadow(0 0 15px #FF1177) blur(0px)
+
+  to
+    box-shadow: 0 0 1px #fff,  0 0 10px #FF1177
+    filter: drop-shadow(0 0 1px #ff00f0) drop-shadow(0 0 5px #FF1177) blur(0px)
+
+
 </style>
 
 <style scoped>

@@ -1,21 +1,19 @@
 <template>
-  <a 
-    :style="style"
-    class="button"
-    v-on="$listeners"
-  ><slot/></a>
+  <a :style="style" class="button" v-on="$listeners">
+    <slot />
+  </a>
 </template>
 
 <script>
 export default {
   props: {
     // color: { type: String, default: "black" },
-    dark: {type: Boolean}
+    dark: { type: Boolean }
   },
   data() {
     return {
       style: {
-        backgroundColor: this.color
+        backgroundColor: this.color || "rgba(0,0,0,0.5)"
       }
     };
   }
@@ -24,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 1.1em;
   // color: rgba(0, 0, 0, 0.8);
@@ -41,9 +39,14 @@ export default {
   padding-left: 12px;
   padding-right: 17px;
   box-shadow: 0 0 5px white, 0 0 5px #00f3ff;
+  @media (max-width: 600px) {
+    padding-left: 10px;
+    padding-right: 13px;
+    font-size: 0.8em;
+  }
   &:hover {
-    box-shadow: 0 0 10px white, 0 0 10px white, 0 0 15px #FF1177, 0 0 20px #FF1177;
-
+    box-shadow: 0 0 10px white, 0 0 10px white, 0 0 15px #ff1177,
+      0 0 20px #ff1177;
   }
   img {
     height: 21px;

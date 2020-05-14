@@ -37,8 +37,10 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-  ],
+ buildModules: [
+  ['@nuxtjs/pwa', { workbox: false }],
+],
+
   /*
   ** Nuxt.js modules
   */

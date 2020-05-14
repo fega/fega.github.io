@@ -28,41 +28,40 @@ export default {
     return {};
   },
   beforeMount() {
-    lax.setup(); // init
-    console.log('adding preset!!!!')
-    lax.addPreset("driftFade", function() {
-      return {
-        "data-lax-opacity": "vh 0, (vh*0.9) 0, (vh*0.6) 1, -vh 0",
-        // "data-lax-translate-x": "vh -50, (vh*0.8) -50, (vh*0.6) 0",
-        "data-lax-anchor":"self"
-      };
-    });
-    lax.addPreset("driftFade2", function() {
-      return {
-        "data-lax-opacity": "vh 0, (vh*0.6) 0, (vh*0.5) 1",
-        "data-lax-translate-y": "vh 150, (vh*0.7) 150, (vh*0.5) 0",
-        "data-lax-anchor":"self"
-      };
-    });
-    lax.addPreset("driftFade3", function() {
-      return {
-        "data-lax-opacity": "vh 0, (vh*0.4) 0, (vh*0.2) 1",
-        "data-lax-translate-y": "vh 50, (vh*0.4) 50, (vh*0.2) 0",
-        "data-lax-anchor":"self"
-      };
-    });
-    lax.addPreset("eager2", function() {
-      return {
-        "data-lax-anchor":"self",
-        "data-lax-translate-y": `(vh) 0, (elh) -20` 
-      };
-    });
-    const updateLax = () => {
-      lax.update(window.scrollY);
-      window.requestAnimationFrame(updateLax);
-    };
+    // lax.setup(); // init
+    // lax.addPreset("driftFade", function() {
+    //   return {
+    //     "data-lax-opacity": "vh 0, (vh*0.9) 0, (vh*0.6) 1, -vh 0",
+    //     // "data-lax-translate-x": "vh -50, (vh*0.8) -50, (vh*0.6) 0",
+    //     "data-lax-anchor":"self"
+    //   };
+    // });
+    // lax.addPreset("driftFade2", function() {
+    //   return {
+    //     "data-lax-opacity": "vh 0, (vh*0.6) 0, (vh*0.5) 1",
+    //     "data-lax-translate-y": "vh 150, (vh*0.7) 150, (vh*0.5) 0",
+    //     "data-lax-anchor":"self"
+    //   };
+    // });
+    // lax.addPreset("driftFade3", function() {
+    //   return {
+    //     "data-lax-opacity": "vh 0, (vh*0.4) 0, (vh*0.2) 1",
+    //     "data-lax-translate-y": "vh 50, (vh*0.4) 50, (vh*0.2) 0",
+    //     "data-lax-anchor":"self"
+    //   };
+    // });
+    // lax.addPreset("eager2", function() {
+    //   return {
+    //     "data-lax-anchor":"self",
+    //     "data-lax-translate-y": `(vh) 0, (elh) -20` 
+    //   };
+    // });
+    // const updateLax = () => {
+    //   lax.update(window.scrollY);
+    //   window.requestAnimationFrame(updateLax);
+    // };
 
-    window.requestAnimationFrame(updateLax);
+    // window.requestAnimationFrame(updateLax);
   }
 };
 </script>
@@ -80,6 +79,14 @@ export default {
 <style lang="sass">
 html
   scroll-behavior: smooth !important
+  background: black
+  // background: url("~assets/cosmos.jpg") bottom right no-repeat;
+  // background-image: linear-gradient(#000,#000, #0d3a53)
+  // background-attachment: fixed
+  // background-size: cover
+body
+  // backdrop-filter: contrast(2.5)
+
 h1, h2, h3, h4, h5, h6
   font-size: 100%
   font-weight: 700
@@ -88,10 +95,10 @@ h1, h2, h3, h4, h5, h6
 body, button, input, select, textarea
   font-family: 'Lato'
   font-size: 1.1em
-html
-  background: black
+  // background-origin: center
+  
 .navbar
-  backdrop-filter: blur(2px)
+  // backdrop-filter: blur(2px)
 
 .navbar-item, .navbar-link, .navbar-burger
   color: white

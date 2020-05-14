@@ -13,6 +13,8 @@
         <div class="band" style="animation-delay: -7s"></div>
         <div class="band" style="animation-delay: -8s"></div>
         <div class="band" style="animation-delay: -9s"></div>
+        <div class="band" style="animation-delay: -10s"></div>
+        <div class="band" style="animation-delay: -11s"></div>
         <City class="city"/>
       </div>
     </div>
@@ -39,9 +41,9 @@ $size: 30vw
   background-color: $bg
   margin-top: 70px
   // padding-top: 10px
-  animation: hue-rotate-contrast 60s ease-in-out infinite 5s
+  // animation: hue-rotate-contrast 60s ease-in-out infinite 5s
   
-  filter: blur(2px) contrast(3)
+  filter: blur(1px) contrast(3)
   overflow: hidden
 .container-sun
   position: relative
@@ -59,20 +61,21 @@ $size: 30vw
   height: $size
   background: radial-gradient(transparent 65%, #ff0488 100%), linear-gradient(#ffcb55 0, #ff0488 100%)
   border-radius: 50%
-  animation: hue-rotate 60s ease-in-out infinite 5s
 
 .band
   position: absolute
+  filter: blur(2px)
   bottom: $size/-5
   width: 100%
   height: 10%
   background: $bg
-  animation: wave 10s linear infinite
+  animation: wave 12s linear infinite
 .city
   z-index: 10
   position: relative
   bottom: -30%
   width: 100%
+  filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 5px #FF1177)
 .gradient
   position: absolute
   top: -12px

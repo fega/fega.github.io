@@ -53,13 +53,14 @@ $size: 30vw
 .sun
   position: absolute
   top: 0
+  margin-top: 10px
   left: 50%
   transform: translate(-50%, 0)
   width: $size
   height: $size
   background: radial-gradient(transparent 65%, #ff0488 100%), linear-gradient(#ffcb55 0, #ff0488 100%)
   border-radius: 50%
-  animation: hue-rotate 60s ease-in-out infinite 5s
+  // animation: hue-rotate 60s ease-in-out infinite 5s
 
 .band
   position: absolute

@@ -178,9 +178,6 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    & .button {
-      width: 150px;
-    }
   }
   &-title-image {
     align-self: center;

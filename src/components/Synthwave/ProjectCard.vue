@@ -58,8 +58,7 @@ export default {
     }
   },
   mounted(){
-    console.log('ADDING LAX PROJECT')
-    lax.addElement(this.$el)
+    // lax.addElement(this.$el)
   }
 };
 </script>
@@ -67,15 +66,14 @@ export default {
 <style lang="sass" scoped>
 .v2-project-card
   max-width: 260px
-  padding: 10px
-  background: black
+  padding: 15px
   color: white
   position: relative
   & .card
-    background: black
+    background: rgba(0,0,0,0.2)
     color: white
-    box-shadow: 0 0 5px #00f3ff
-
+    box-shadow:  0 0 15px #00f3ff
+    border-radius: 15px 2px  15px 2px
   & .title
     color: white
     font-size: 1.2em

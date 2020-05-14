@@ -21,7 +21,7 @@ export default {
 
 <style lang="sass" scoped>
 .contact-button
-  font-size: 30px
+  font-size: 1.1em
   margin: auto
   width: fit-content
   display: flex
@@ -47,7 +47,7 @@ export default {
   @media (max-width: 433px)
     font-size: 13px
   &__email, &__copy
-    border: 2px solid white
+    border: 1px solid rgba(255, 255, 255, 0.5)
     padding: 10px
     margin: none
     display: flex;
@@ -55,13 +55,13 @@ export default {
   &__email
     border-radius: 50px 0 0px 50px
     padding-left: 50px
-    border-right: 0.5px solid white
+    border-right: 0.5px solid rgba(255, 255, 255, 0.5)
     @media (max-width: 612px)
       padding-left: 30px
     @media (max-width: 433px)
       padding-left: 20px
   &__copy
-    border-left: 0.5px solid white
+    border-left: 0.5px solid rgba(255, 255, 255, 0.5)
     border-radius: 0px 50px 50px 0px
     padding-right: 50px
     

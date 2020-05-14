@@ -1,16 +1,16 @@
 <template>
   <div class="synth-logo">
     <transition name="side2" appear leave >
-      <div class="name" v-if="show==='logo'">Fabian Gutierrez</div>
+      <div class="name" v-if="show">Fabian Gutierrez</div>
     </transition>
     <transition name="side" appear leave >
-      <div class="synth" data-text="FullStack" v-if="show==='logo'"></div>
+      <div class="synth" data-text="FullStack" v-if="show"></div>
     </transition>
     <transition name="up" appear leave >
-      <div class="neon" v-if="show==='logo'">Developer</div>
+      <div class="neon" v-if="show">Developer</div>
     </transition>
     <transition name="shrink" appear leave >
-      <div class="description" v-if="show==='logo'">Javascript expert ● IT Security Specialist</div>
+      <div class="description" v-if="show">Javascript expert ● IT Security Specialist</div>
     </transition>
   </div>
 </template>
@@ -20,7 +20,7 @@
 export default {
   data() {
     return {
-      show: "logo"
+      show: true
     };
   }
 };
