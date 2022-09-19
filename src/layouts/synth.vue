@@ -8,6 +8,7 @@
         </b-navbar-item>
       </template>
       <template slot="end">
+        <b-navbar-item href="https://stats.uptimerobot.com/81KN1tXDE7">Project's Status</b-navbar-item>
         <b-navbar-item href="#about">About</b-navbar-item>
         <b-navbar-item href="#experience">Experience</b-navbar-item>
         <b-navbar-item href="#projects">Showcase</b-navbar-item>

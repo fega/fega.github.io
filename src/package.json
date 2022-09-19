@@ -4,6 +4,9 @@
   "description": "fabian nómada's  portfolio",
   "author": "Fabian Gutierrez",
   "private": true,
+  "engines": {
+    "node": "^10"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
